@@ -31,40 +31,40 @@ void HorrorManager::onPlayerMove() {
 	file << std::to_string(this->moves);
 	file.close();
 	switch (this->moves) {
-	case 23:
+	case 53:
 		this->screamer1();
 		break;
-	case 37:
+	case 67:
 		this->lookingFromAbove();
 		break;
-	case 44:
+	case 74:
 		this->shadow();
 		break;
-	case 45:
+	case 75:
 		this->areYouOk();
 		break;
-	case 59:
+	case 89:
 		this->rotate();
 		break;
-	case 68:
+	case 98:
 		this->clicks();
 		break;
-	case 86:
+	case 116:
 		this->translateLabel();
 		break;
-	case 92:
+	case 122:
 		this->crush();
 		break;
-	case 97:
+	case 127:
 		this->calmMusic();
 		break;
-	case 108:
+	case 138:
 		this->dance();
 		break;
-	case 112:
+	case 142:
 		this->boy2();
 		break;
-	case 115:
+	case 145:
 		this->bsod();
 		break;
 	}
