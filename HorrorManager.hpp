@@ -41,4 +41,5 @@ private:
 	void _mystery();
 	void _glitch();
 	void _glitch2();
+	void _sorry();
 };

@@ -86,7 +86,7 @@ void HorrorManager::onPlayerMove() {
 void HorrorManager::update() {
 	if (this->timeEventTimer.getElapsedTime().asSeconds() > 5 * 60) {
 		this->timeEventTimer.restart();
-		uint32_t random = GlobalRandomGenerator::get().gen() % 4;
+		uint32_t random = GlobalRandomGenerator::get().gen() % 5;
 		switch (random) {
 		case 0:
 			this->_mother();
@@ -99,6 +99,9 @@ void HorrorManager::update() {
 			break;
 		case 3:
 			this->_glitch2();
+			break;
+		case 4:
+			this->_sorry();
 			break;
 		}
 	}
@@ -201,4 +204,7 @@ void HorrorManager::_glitch() {
 }
 void HorrorManager::_glitch2() {
 	this->soundManager->play("glitch2");
+}
+void HorrorManager::_sorry() {
+	this->soundManager->play("sorry");
 }
