@@ -11,5 +11,6 @@ public:
 	void update();
 private:
 	sf::Music music;
+	sf::Music paradox;
 	std::optional<sf::Clock> afterStop;
 };
