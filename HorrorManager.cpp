@@ -26,45 +26,57 @@ HorrorManager::HorrorManager(std::shared_ptr<GUIState> guiState, std::shared_ptr
 	this->error = error;
 }
 void HorrorManager::onPlayerMove() {
+	const uint32_t screamer1 = 53;
+	const uint32_t lookingFromAbove = screamer1 + 19;
+	const uint32_t shadow = lookingFromAbove + 12;
+	const uint32_t areYouOk = shadow + 1;
+	const uint32_t rotate = areYouOk + 19;
+	const uint32_t clicks = rotate + 14;
+	const uint32_t translateLabel = clicks + 18;
+	const uint32_t crush = translateLabel + 9;
+	const uint32_t calmMusic = crush + 19;
+	const uint32_t dance = calmMusic + 16;
+	const uint32_t boy2 = dance + 7;
+	const uint32_t bsod = boy2 + 8;
 	this->moves += 1;
 	std::ofstream file("appdata/progress.cfg");
 	file << std::to_string(this->moves);
 	file.close();
 	switch (this->moves) {
-	case 53:
+	case screamer1:
 		this->screamer1();
 		break;
-	case 67:
+	case lookingFromAbove:
 		this->lookingFromAbove();
 		break;
-	case 74:
+	case shadow:
 		this->shadow();
 		break;
-	case 75:
+	case areYouOk:
 		this->areYouOk();
 		break;
-	case 89:
+	case rotate:
 		this->rotate();
 		break;
-	case 98:
+	case clicks:
 		this->clicks();
 		break;
-	case 116:
+	case translateLabel:
 		this->translateLabel();
 		break;
-	case 122:
+	case crush:
 		this->crush();
 		break;
-	case 127:
+	case calmMusic:
 		this->calmMusic();
 		break;
-	case 138:
+	case dance:
 		this->dance();
 		break;
-	case 142:
+	case boy2:
 		this->boy2();
 		break;
-	case 145:
+	case bsod:
 		this->bsod();
 		break;
 	}
