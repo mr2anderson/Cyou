@@ -9,8 +9,10 @@ class ScaryPlaylist {
 public:
 	ScaryPlaylist();
 	void update();
+	void stop();
 private:
 	sf::Music music;
 	sf::Music paradox;
 	std::optional<sf::Clock> afterStop;
+	bool stopped;
 };

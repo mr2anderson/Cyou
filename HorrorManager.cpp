@@ -3,6 +3,7 @@
 #include "SoundManager.hpp"
 #include "GlobalRandomGenerator.hpp"
 #include "OSTools.hpp"
+#include "ScaryPlaylist.hpp"
 #include <filesystem>
 #include <fstream>
 #include <chrono>
@@ -11,7 +12,7 @@
 #define USE_BSOD
 
 
-HorrorManager::HorrorManager(std::shared_ptr<GUIState> guiState, std::shared_ptr<SoundManager> soundManager, std::shared_ptr<std::wstring> error) {
+HorrorManager::HorrorManager(std::shared_ptr<GUIState> guiState, std::shared_ptr<SoundManager> soundManager, std::shared_ptr<std::wstring> error, std::shared_ptr<ScaryPlaylist> playlist) {
 	if (std::filesystem::exists("appdata/progress.cfg")) {
 		std::ifstream file("appdata/progress.cfg");
 		std::string buff;
@@ -24,6 +25,7 @@ HorrorManager::HorrorManager(std::shared_ptr<GUIState> guiState, std::shared_ptr
 	this->guiState = guiState;
 	this->soundManager = soundManager;
 	this->error = error;
+	this->playlist = playlist;
 }
 void HorrorManager::onPlayerMove() {
 	const uint32_t screamer1 = 53;
@@ -104,6 +106,7 @@ void HorrorManager::calmMusic() {
 	auto n = std::chrono::system_clock::now();
 	auto d = n.time_since_epoch();
 	auto m = std::chrono::duration_cast<std::chrono::milliseconds>(d).count() + 50000;
+	this->playlist->stop();
 	this->soundManager->play("calmmusic");
 }
 void HorrorManager::translateLabel() {
@@ -131,6 +134,7 @@ void HorrorManager::dance() {
 	auto n = std::chrono::system_clock::now();
 	auto d = n.time_since_epoch();
 	auto m = std::chrono::duration_cast<std::chrono::milliseconds>(d).count() + 10000;
+	this->playlist->stop();
 	this->guiState->screamer = std::make_tuple(m, "dance");
 }
 void HorrorManager::bsod() {

@@ -57,7 +57,7 @@ void App::launch() {
 	this->error = std::make_shared<std::wstring>();
 	this->state = std::make_shared<State>(State::GameInProgress);
 	this->guiState = std::make_shared<GUIState>();
-	this->horrorManager = std::make_shared<HorrorManager>(this->guiState, this->soundManager, this->error);
+	this->horrorManager = std::make_shared<HorrorManager>(this->guiState, this->soundManager, this->error, this->playlist);
 	this->board = std::make_shared<Board>();
 	if (this->window == nullptr) {
 		this->window = std::make_shared<sf::RenderWindow>(sf::VideoMode::getDesktopMode(), "Chess.exe", sf::Style::Fullscreen);
