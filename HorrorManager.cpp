@@ -36,10 +36,12 @@ void HorrorManager::onPlayerMove() {
 	const uint32_t clicks = rotate + 14;
 	const uint32_t translateLabel = clicks + 18;
 	const uint32_t crush = translateLabel + 9;
-	const uint32_t calmMusic = crush + 19;
+	const uint32_t rotate2 = crush + 19;
+	const uint32_t calmMusic = rotate2 + 10;
 	const uint32_t dance = calmMusic + 16;
 	const uint32_t boy2 = dance + 7;
-	const uint32_t bsod = boy2 + 8;
+	const uint32_t dance2 = boy2 + 19;
+	const uint32_t bsod = dance2 + 8;
 	this->moves += 1;
 	std::ofstream file("appdata/progress.cfg");
 	file << std::to_string(this->moves);
@@ -69,6 +71,9 @@ void HorrorManager::onPlayerMove() {
 	case crush:
 		this->crush();
 		break;
+	case rotate2:
+		this->rotate();
+		break;
 	case calmMusic:
 		this->calmMusic();
 		break;
@@ -77,6 +82,9 @@ void HorrorManager::onPlayerMove() {
 		break;
 	case boy2:
 		this->boy2();
+		break;
+	case dance2:
+		this->dance();
 		break;
 	case bsod:
 		this->bsod();
