@@ -21,6 +21,7 @@ SoundManager::SoundManager() {
     this->map["glitch"].loadFromFile("resources/glitch.ogg");
     this->map["glitch2"].loadFromFile("resources/glitch2.ogg");
     this->map["sorry"].loadFromFile("resources/sorry.ogg");
+    this->map["imissyou"].loadFromFile("resources/imissyou.ogg");
 }
 void SoundManager::play(const std::string &name) {
     while (!this->queue.empty() and this->queue.front().getStatus() != sf::Sound::Status::Playing) {

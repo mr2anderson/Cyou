@@ -42,4 +42,5 @@ private:
 	void _glitch();
 	void _glitch2();
 	void _sorry();
+	void _imissyou();
 };
