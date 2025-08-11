@@ -38,4 +38,5 @@ private:
 	void boy2();
 	void areYouOk();
 	void _mother();
+	void _mystery();
 };

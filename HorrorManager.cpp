@@ -184,3 +184,6 @@ void HorrorManager::areYouOk() {
 void HorrorManager::_mother() {
 	this->soundManager->play("mother");
 }
+void HorrorManager::_mystery() {
+	this->soundManager->play("mystery");
+}
