@@ -11,6 +11,7 @@
 #include "HorrorManager.hpp"
 #include "OSTools.hpp"
 #include "UCIEngineLevel.hpp"
+#include "ScaryPlaylist.hpp"
 #include <filesystem>
 #include <iostream>
 #include <fstream>
@@ -49,6 +50,7 @@ void App::launch() {
 		return;
 	}
 
+	this->playlist = std::make_shared<ScaryPlaylist>();
 	this->level = std::make_shared<UCIEngineLevel>();
 	this->playerToMove = std::make_shared<bool>(true);
 	this->closeFlag = std::make_shared<bool>(false);
@@ -77,6 +79,7 @@ void App::launch() {
 		this->boardRenderer->render(this->window);
 		this->window->display();
 		this->uciController->process();
+		this->playlist->update();
 		if (*this->closeFlag or !(*this->error).empty()) {
 			this->window->close();
 			break;

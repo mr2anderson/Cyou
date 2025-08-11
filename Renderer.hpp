@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <cstdint>
 
 
 class Layout;
@@ -33,6 +34,13 @@ private:
 
 	sf::Texture shadow;
 	sf::Texture boy, boy2;
+
+	sf::Shader shader;
+
+	sf::Clock shiftTimer;
+	bool firstShift;
+
+	sf::Clock clock;
 
 	void renderSquare(sf::RenderTexture &renderer);
 	void renderBoard(sf::RenderTexture& renderer);

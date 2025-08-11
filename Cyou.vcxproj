@@ -379,6 +379,7 @@ copy /Y "$(SolutionDir)resources"  "$(TargetDir)resources\"</Command>
     <ClCompile Include="HorrorManager.cpp" />
     <ClCompile Include="InputController.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ScaryPlaylist.cpp" />
     <ClCompile Include="SoundManager.cpp" />
     <ClCompile Include="UCIEngine.cpp" />
     <ClCompile Include="UCIEngineController.cpp" />
@@ -608,6 +609,7 @@ copy /Y "$(SolutionDir)resources"  "$(TargetDir)resources\"</Command>
     <ClInclude Include="HorrorManager.hpp" />
     <ClInclude Include="InputController.hpp" />
     <ClInclude Include="OSTools.hpp" />
+    <ClInclude Include="ScaryPlaylist.hpp" />
     <ClInclude Include="SoundManager.hpp" />
     <ClInclude Include="State.hpp" />
     <ClInclude Include="UCIEngine.hpp" />

@@ -20,6 +20,7 @@ class UCIEngineController;
 enum State;
 class HorrorManager;
 class UCIEngineLevel;
+class ScaryPlaylist;
 
 
 class App {
@@ -27,6 +28,7 @@ public:
 	App();
 	void launch();
 private:
+	std::shared_ptr<ScaryPlaylist> playlist;
 	std::shared_ptr<Layout> boardLayout;
 	std::shared_ptr<Board> board;
 	std::shared_ptr<Renderer> boardRenderer;
