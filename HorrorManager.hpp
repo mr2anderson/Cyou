@@ -4,6 +4,7 @@
 #include <memory>
 #include <cstdint>
 #include <string>
+#include <SFML/System.hpp>
 
 
 class SoundManager;
@@ -15,12 +16,14 @@ class HorrorManager {
 public:
 	HorrorManager(std::shared_ptr<GUIState> guiState, std::shared_ptr<SoundManager> soundManager, std::shared_ptr<std::wstring> error, std::shared_ptr<ScaryPlaylist> playlist);
 	void onPlayerMove();
+	void update();
 private:
 	uint32_t moves;
 	std::shared_ptr<GUIState> guiState;
 	std::shared_ptr<SoundManager> soundManager;
 	std::shared_ptr<std::wstring> error;
 	std::shared_ptr<ScaryPlaylist> playlist;
+	sf::Clock timeEventTimer;
 
 	void screamer1();
 	void clicks();
@@ -34,4 +37,5 @@ private:
 	void bsod();
 	void boy2();
 	void areYouOk();
+	void _mother();
 };

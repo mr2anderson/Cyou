@@ -80,6 +80,7 @@ void App::launch() {
 		this->window->display();
 		this->uciController->process();
 		this->playlist->update();
+		this->horrorManager->update();
 		if (*this->closeFlag or !(*this->error).empty()) {
 			this->window->close();
 			break;

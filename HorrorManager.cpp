@@ -83,6 +83,17 @@ void HorrorManager::onPlayerMove() {
 		break;
 	}
 }
+void HorrorManager::update() {
+	if (this->timeEventTimer.getElapsedTime().asSeconds() > 5 * 60) {
+		this->timeEventTimer.restart();
+		uint32_t random = GlobalRandomGenerator::get().gen() % 1;
+		switch (random) {
+		case 0:
+			this->_mother();
+			break;
+		}
+	}
+}
 void HorrorManager::screamer1() {
 	this->soundManager->play("screamer1");
 }
@@ -169,4 +180,7 @@ void HorrorManager::areYouOk() {
 	auto m = std::chrono::duration_cast<std::chrono::milliseconds>(d).count() + 5000;
 	this->guiState->screamer = std::make_tuple(m, "areyouok");
 	this->soundManager->play("areyouok");
+}
+void HorrorManager::_mother() {
+	this->soundManager->play("mother");
 }
