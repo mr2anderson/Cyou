@@ -18,6 +18,8 @@ SoundManager::SoundManager() {
     this->map["areyouok"].loadFromFile("resources/areyouok.ogg");
     this->map["mother"].loadFromFile("resources/mother.ogg");
     this->map["mystery"].loadFromFile("resources/mystery.ogg");
+    this->map["glitch"].loadFromFile("resources/glitch.ogg");
+    this->map["glitch2"].loadFromFile("resources/glitch2.ogg");
 }
 void SoundManager::play(const std::string &name) {
     while (!this->queue.empty() and this->queue.front().getStatus() != sf::Sound::Status::Playing) {

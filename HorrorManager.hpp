@@ -39,4 +39,6 @@ private:
 	void areYouOk();
 	void _mother();
 	void _mystery();
+	void _glitch();
+	void _glitch2();
 };
