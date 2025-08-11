@@ -37,9 +37,15 @@ private:
 	void bsod();
 	void boy2();
 	void areYouOk();
+
 	void _mother();
 	void _mystery();
 	void _glitch2();
 	void _sorry();
 	void _imissyou();
+	void _always();
+	void _ghost();
+	void _secret();
+	void _untouched();
+	void _wideopen();
 };

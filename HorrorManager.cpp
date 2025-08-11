@@ -84,9 +84,9 @@ void HorrorManager::onPlayerMove() {
 	}
 }
 void HorrorManager::update() {
-	if (this->timeEventTimer.getElapsedTime().asSeconds() > 5 * 60) {
+	if (this->timeEventTimer.getElapsedTime().asSeconds() > 3 * 60) {
 		this->timeEventTimer.restart();
-		uint32_t random = GlobalRandomGenerator::get().gen() % 5;
+		uint32_t random = GlobalRandomGenerator::get().gen() % 10;
 		switch (random) {
 		case 0:
 			this->_mother();
@@ -102,6 +102,22 @@ void HorrorManager::update() {
 			break;
 		case 4:
 			this->_imissyou();
+			break;
+		case 5:
+			this->_always();
+			break;
+		case 6:
+			this->_ghost();
+			break;
+		case 7:
+			this->_secret();
+			break;
+		case 8:
+			this->_untouched();
+			break;
+		case 9:
+			this->_wideopen();
+			break;
 		}
 	}
 }
@@ -206,4 +222,19 @@ void HorrorManager::_sorry() {
 }
 void HorrorManager::_imissyou() {
 	this->soundManager->play("imissyou");
+}
+void HorrorManager::_always() {
+	this->soundManager->play("always");
+}
+void HorrorManager::_ghost() {
+	this->soundManager->play("ghost");
+}
+void HorrorManager::_secret() {
+	this->soundManager->play("secret");
+}
+void HorrorManager::_untouched() {
+	this->soundManager->play("untouched");
+}
+void HorrorManager::_wideopen() {
+	this->soundManager->play("wideopen");
 }

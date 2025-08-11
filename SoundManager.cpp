@@ -21,6 +21,11 @@ SoundManager::SoundManager() {
     this->map["glitch2"].loadFromFile("resources/glitch2.ogg");
     this->map["sorry"].loadFromFile("resources/sorry.ogg");
     this->map["imissyou"].loadFromFile("resources/imissyou.ogg");
+    this->map["always"].loadFromFile("resources/always.ogg");
+    this->map["ghost"].loadFromFile("resources/ghost.ogg");
+    this->map["secret"].loadFromFile("resources/secret.ogg");
+    this->map["untouched"].loadFromFile("resources/untouched.ogg");
+    this->map["wideopen"].loadFromFile("resources/wideopen.ogg");
 }
 void SoundManager::play(const std::string &name) {
     while (!this->queue.empty() and this->queue.front().getStatus() != sf::Sound::Status::Playing) {
