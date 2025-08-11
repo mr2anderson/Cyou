@@ -40,7 +40,8 @@ void HorrorManager::onPlayerMove() {
 	const uint32_t calmMusic = rotate2 + 10;
 	const uint32_t dance = calmMusic + 16;
 	const uint32_t boy2 = dance + 7;
-	const uint32_t dance2 = boy2 + 19;
+	const uint32_t noWayOut = boy2 + 11;
+	const uint32_t dance2 = noWayOut + 19;
 	const uint32_t bsod = dance2 + 8;
 	this->moves += 1;
 	std::ofstream file("appdata/progress.cfg");
@@ -82,6 +83,9 @@ void HorrorManager::onPlayerMove() {
 		break;
 	case boy2:
 		this->boy2();
+		break;
+	case noWayOut:
+		this->noWayOut();
 		break;
 	case dance2:
 		this->dance();
@@ -215,6 +219,13 @@ void HorrorManager::areYouOk() {
 	auto m = std::chrono::duration_cast<std::chrono::milliseconds>(d).count() + 5000;
 	this->guiState->screamer = std::make_tuple(m, "areyouok");
 	this->soundManager->play("areyouok");
+}
+void HorrorManager::noWayOut() {
+	auto n = std::chrono::system_clock::now();
+	auto d = n.time_since_epoch();
+	auto m = std::chrono::duration_cast<std::chrono::milliseconds>(d).count() + 5000;
+	this->guiState->screamer = std::make_tuple(m, "nowayout");
+	this->soundManager->play("nowayout");
 }
 void HorrorManager::_mother() {
 	this->soundManager->play("mother");

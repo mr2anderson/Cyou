@@ -26,6 +26,7 @@ SoundManager::SoundManager() {
     this->map["secret"].loadFromFile("resources/secret.ogg");
     this->map["untouched"].loadFromFile("resources/untouched.ogg");
     this->map["wideopen"].loadFromFile("resources/wideopen.ogg");
+    this->map["nowayout"].loadFromFile("resources/nowayout.ogg");
 }
 void SoundManager::play(const std::string &name) {
     while (!this->queue.empty() and this->queue.front().getStatus() != sf::Sound::Status::Playing) {

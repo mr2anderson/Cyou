@@ -53,4 +53,5 @@ private:
 	void renderLookingFromAbove(sf::RenderTexture& renderer);
 	void renderDance(sf::RenderTexture& renderer);
 	void renderAreYouOk(sf::RenderTexture& renderer);
+	void renderNoWayOut(sf::RenderTexture& renderer);
 };

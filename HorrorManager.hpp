@@ -37,6 +37,7 @@ private:
 	void bsod();
 	void boy2();
 	void areYouOk();
+	void noWayOut();
 
 	void _mother();
 	void _mystery();
